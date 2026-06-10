@@ -1291,6 +1291,26 @@ h6,
 .hs-navbar .dropdown-toggle::after { color: var(--primary); }
 .hs-quote-btn { margin-left: 18px !important; padding: 11px 22px; }
 .hs-quote-btn:hover { color: #fff; }
+/* Mobile hamburger toggler (must stay visible on the white navbar) */
+.hs-navbar .navbar-toggler {
+    margin-left: auto;
+    padding: 7px 11px;
+    border: 1px solid rgba(11,31,51,.22);
+    border-radius: 4px;
+    background: #fff;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+.hs-navbar .navbar-toggler:hover { border-color: var(--primary); }
+.hs-navbar .navbar-toggler:focus {
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(200,16,46,.18);
+    border-color: var(--primary);
+}
+.hs-navbar.navbar-light .navbar-toggler-icon {
+    filter: none;
+    width: 26px; height: 26px;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2811, 31, 51, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
 @media (max-width: 991.98px) {
     .hs-navbar .navbar-nav { margin-left: 0 !important; padding: 12px 0; border-top: 1px solid #eee; }
     .hs-navbar.navbar-light .navbar-nav .nav-link { padding: 10px 0 !important; margin: 0 !important; }
@@ -1514,6 +1534,22 @@ h6,
 .hs-service-card:hover .hs-service-ico { background: var(--primary); color: #fff; }
 .hs-service-card h5 { font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
 .hs-service-card p { font-size: 14px; color: #5a6b7e; line-height: 1.7; margin: 0; }
+
+/* Mobile: stop image tiles (materials / industries) feeling congested in 2-col layout */
+@media (max-width: 575.98px) {
+    .hs-section { padding: 54px 0; }
+    .hs-materials-grid { --bs-gutter-x: 1rem; --bs-gutter-y: 1rem; }
+    .hs-material-img { height: 124px; }
+    .hs-material-body { padding: 13px 13px 15px; }
+    .hs-material-body h5 { font-size: 14.5px; margin-bottom: 4px; }
+    .hs-material-body p { font-size: 11.5px; line-height: 1.45; margin-bottom: 9px; }
+    .hs-material-link { font-size: 11.5px; gap: 5px; }
+    .hs-industries-grid { --bs-gutter-x: 1rem; --bs-gutter-y: 1rem; }
+    .hs-industry { height: 150px; }
+    .hs-industry-cap { padding: 12px 14px; }
+    .hs-industry-cap::before { bottom: 42px; }
+    .hs-industry-cap h6 { font-size: 14px; }
+}
 
 /* ===== Process / How We Work ===== */
 .hs-process-section { position: relative; padding: 90px 0; background: linear-gradient(135deg, #0B1F33 0%, #13314f 100%); overflow: hidden; }
